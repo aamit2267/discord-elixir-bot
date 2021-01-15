@@ -81,43 +81,4 @@ defmodule Thonk.Commands.Basic do
         |> Cogs.say()
     end
   end
-
-  @doc """
-  Plays a gemidao do zap in a voice channel.
-  """
-  #Cogs.def gemidao do
-  #  case Cogs.guild() do
-  #    {:ok, guild} ->
-  #      voice_channel = Enum.find(guild.channels, &match?(%Channel.VoiceChannel{}, &1))
-  #      Voice.join(guild.id, voice_channel.id)
-  #      Voice.play_file(guild.id, "lib/assets/gemidao.mp3")
-
-  #    {:error, reason} ->
-  #      Logger.error(reason)
-  #      Cogs.say(":exclamation: **#{reason}**")
-  #  end
-  #end
-
-  @doc """
-  Gets a random comment from brazilian porn on xvideos.
-
-  Inspired by `https://github.com/ihavenonickname/bot-telegram-comentarios-xvideos`.
-  """
-  Cogs.def xvideos do
-    {title, %{"message" => content, "name" => author, "pic" => picture, "date" => date}} = Utils.get_comment()
-    content = Utils.escape(content)
-
-    %Embed{color: 0xE80000}
-    |> Embed.author(
-      name: "XVideos",
-      icon_url: "http://cdn.appaix.com/2015/0116/xvideos-23_84fec.png"
-    )
-    |> Embed.field("Título:", "**`#{title}`**")
-    |> Embed.field("#{author} comentou:", "**`#{content}`**")
-    |> Embed.thumbnail(picture)
-    |> Embed.footer(
-      text: "#{date} • Requested by #{message.author.username}##{message.author.discriminator}"
-    )
-    |> Embed.send()
-  end
 end
