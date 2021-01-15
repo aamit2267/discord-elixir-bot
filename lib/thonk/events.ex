@@ -56,4 +56,13 @@ defmodule Thonk.Events do
       |> Embed.send()
     end
   end
+  
+  def hello_everyone(message) do
+    if message.content == "hello" && message.author.id != Cache.user().id do
+      %Embed{}
+      |> Embed.image("https://upload.wikimedia.org/wikipedia/en/6/6b/Hello_Web_Series_%28Wordmark%29_Logo.png")
+      |> Embed.color(Enum.random(@colors))
+      |> Embed.send()
+    end
+  end
 end
