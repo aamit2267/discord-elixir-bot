@@ -5,7 +5,7 @@ defmodule Thonk.Events do
   require Alchemy.Embed, as: Embed
 
   @colors [
-    0x75B1FF, # blue
+    0x0000ff, # blue
     0xFF7DB6, # pink
     0x8FFFA7, # green
     0xFF9E54, # orange
@@ -13,7 +13,7 @@ defmodule Thonk.Events do
     0xFFFF99, # yellow1
     0xFFF566, # yellow2
     0xFFF12E, # yellow3
-    0xFF6161, # red1
+    0xff0000, # red1
     0xFF5460, # red2
     0xBA7049  # brown
   ]
